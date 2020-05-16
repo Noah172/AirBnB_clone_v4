@@ -3,12 +3,14 @@
 document.addEventListener('DOMContentLoaded', function (data, status) {
   let cache_id = document.getElementById('cache_id').value;
   let dic = {};
-  let status = document.getElementById('#api_status')
-  if (status === "OK") {
-    $(this).addClass('available');
-  } else {
-    $(this).removeClass('available');
-  }
+  function () {
+    const mystatus = response.status;
+    if (mystatus === "OK") {
+      ('DIV#api_status').addClass('available');
+    } else {
+      ('DIV#api_status').removeClass('available');
+    }
+  };
   $('.amenities > h4')
   $('input[type="checkbox"]').click(function(){
     if($(this).is(":checked")){
