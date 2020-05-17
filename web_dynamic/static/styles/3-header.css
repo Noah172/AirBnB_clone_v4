@@ -14,7 +14,7 @@ header .logo {
     background: #FF545F;
 }
 
-DIV#api_status {
+#api_status {
     float: right;
     background: #CCCCCC;
     width: 40px;

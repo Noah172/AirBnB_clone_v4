@@ -3,14 +3,14 @@
 document.addEventListener('DOMContentLoaded', function (data, status) {
   let cache_id = document.getElementById('cache_id').value;
   let dic = {};
-  function () {
-    const mystatus = response.status;
-    if (mystatus === "OK") {
-      ('DIV#api_status').addClass('available');
+  $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
+    if (data.status === 'OK') {
+      $('#api_status').addClass('available');
     } else {
-      ('DIV#api_status').removeClass('available');
+      $('#api_status').removeClass('available');
     }
-  };
+  });
+
   $('.amenities > h4')
   $('input[type="checkbox"]').click(function(){
     if($(this).is(":checked")){
