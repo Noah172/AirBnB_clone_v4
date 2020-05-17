@@ -12,9 +12,12 @@ document.addEventListener('DOMContentLoaded', function (data, status) {
   });
 
   $.get('http://0.0.0.0:5001/api/v1/places_search/', function (data) {
-    
-
-
+    const places = data;
+    let place;
+    for (let index = 0; index < places.lenght; index++) {
+      place = '<li>'+places[index]['name']+'</li>';
+      $('article').append(place);
+    }
   });
 
   $('.amenities > h4')
