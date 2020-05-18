@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function (data, status) {
-  let cache_id = document.getElementById('cache_id').value;
+  let cache_id = document.getElementById('cache_id');
   let dic = {};
 
   // create the dic
@@ -26,9 +26,10 @@ document.addEventListener('DOMContentLoaded', function (data, status) {
 
   // make the post
   $('button').click(function(){
-   $.ajax({
-     
-   });
+    let jdic = JSON.jsonify(dic);
+    $.post('http://0.0.0.0:5001/api/v1/places_search/', jdic, function(data, status) {
+    alert('post sent: ' + data + ', status: ' + status)
+    });
   
 
     // takes the dic from the api
