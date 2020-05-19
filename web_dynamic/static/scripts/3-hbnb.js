@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function (data, status) {
   $.get('http://127.0.0.1:5001/api/v1/status', (data, code) => {
     if (code == 'success') {
       if (data.status != 'OK') {
-	$('#api_status').removeClass('available');
+      	$('#api_status').removeClass('available');
       } else {
-	$('#api_status').addClass('available');
+      	$('#api_status').addClass('available');
       }
     }
   });
